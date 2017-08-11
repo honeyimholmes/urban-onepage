@@ -1,0 +1,13 @@
+{
+  "name": "lv",
+  "version": "0.0.1",
+  "description": "zadanie",
+  "author": "Karolina",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^1.12.0"
+  }
+}

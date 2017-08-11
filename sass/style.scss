@@ -1,0 +1,480 @@
+@import "fonta/variables";
+@import "fonta/mixins";
+@import "fonta/path";
+@import "fonta/core";
+@import "fonta/larger";
+@import "fonta/fixed-width";
+@import "fonta/list";
+@import "fonta/bordered-pulled";
+@import "fonta/animated";
+@import "fonta/rotated-flipped";
+@import "fonta/stacked";
+@import "fonta/icons";
+@import "fonta/screen-reader";
+@import "partials/grid";
+@import "_variables";
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: map-get($colors, white);
+}
+
+p, h1, h2, h3, h4, h5, h6, a, ul {
+    font-family: $font-family;
+}
+
+a {
+    color: map-get($colors, black);
+    text-decoration: none;
+}
+
+nav {
+    
+    position: fixed;
+    z-index: 999;
+    
+    ul {
+        list-style-type: none;
+    }
+    
+    li {
+        display: inline-block;
+        margin-right: 30px;
+    }
+}
+
+.navbar {
+        width: 100%;
+    }
+    
+.navbar-left {
+        width: 34%;
+        height: 65px;
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: map-get($colors, white);
+        float: left;
+        text-align: right;
+    }
+
+.navbar-right {
+        width: 66%;
+        height: 65px;
+        display: inline-block;
+        box-sizing: border-box;
+        background-color: map-get($colors, yellow);
+        float: left;
+    }
+
+.logo {
+        margin-top: 12px;
+        margin-right: 15px;
+    }
+
+.menu {
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-top: 10px;
+        margin-left: -22px;
+        color: map-get($colors, yellow);
+        float: left;
+    }
+
+.active {
+    text-decoration: underline;
+}
+
+.hamburger {
+    display: inline-block;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+    font-size: 23px;
+    display: none;
+}
+
+.animation-display {
+    animate: display 1s ease;
+}
+
+.responsive-menu {
+    display: none;
+    text-align: center;
+    
+    ul {
+        list-style-type: none;
+        margin: 65px 0 0 0;
+        padding: 0;
+        float: right;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        
+    }
+    
+    li {
+        display: block;
+        background-color: map-get($colors, yellow);
+        margin-right: 0;
+        border-bottom: 1px solid map-get($colors, white);
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 400;
+        padding: 15px 0;
+        color: map-get($colors, darkblue);
+    } 
+}
+
+.display {
+    display: block;
+}
+
+.contact {
+    display: inline-block;
+    float: right;
+    margin-top: 15px;
+    margin-right: 10px;
+    
+    .fa {
+        color: map-get($colors, black);
+        background-color: map-get($colors, white);
+        padding: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-right: 8px;
+    }
+}
+
+.main-header {
+    height: 575px;
+    background-image: url(../img/top.jpg);
+    background-size: cover;
+    box-shadow: inset 0 0 0 575px rgba(35,0,87,0.5);
+    display:-webkit-flex;
+    display:-webkit-box;
+    display:-moz-flex;
+    display:-moz-box;
+    display:-ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    
+    .header-content {
+        display: inline-block;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 56px;
+        color: map-get($colors, white);
+        font-weight: 400;
+        line-height: 0px;
+    }
+    
+    h3 {
+        font-size: 48px;
+        color: map-get($colors, yellow);
+        font-weight: 400;
+        line-height: 25px;
+    }
+    
+    button {
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: 700;
+        border-radius: 45px;
+        border: none;
+    }
+    
+    .arrow {
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        font-size: 34px;
+        animation: arrow 2s ease infinite;
+    }
+    
+    &:after {
+        content: ' ';
+        width: 0; 
+        height: 0; 
+        border-left: 45px solid transparent;
+        border-right: 45px solid transparent;
+        border-bottom: 45px solid white;
+        position: absolute;
+        bottom: 0;
+    }
+  
+}
+
+.register {
+    background-color: map-get($colors, yellow);
+    margin-right: 23px;
+    padding: 7px 22px;
+    
+    &:hover {
+        animation: btnhover 1s ease, btnborder 1s ease;
+        animation-fill-mode: forwards;
+
+    }
+}
+
+.tou {
+    padding: 7px 34px;
+    background-color: transparent;
+    -webkit-box-shadow: inset 0px 0px 0px 2px map-get($colors, yellow);
+    -moz-box-shadow: inset 0px 0px 0px 2px map-get($colors, yellow);
+    box-shadow: inset 0px 0px 0px 2px map-get($colors, yellow);
+    
+    
+    a {
+        color: map-get($colors, yellow);
+        
+        &:hover {
+            color: map-get($colors, black);
+        }
+    }
+    
+    
+    &:hover {
+        animation: btn2hover 1s ease, btnborder 1s ease;
+        animation-fill-mode: forwards;
+        
+        a {
+            color: map-get($colors, black);
+        }
+        
+    }
+}
+
+.main-content {
+    width: 100%;
+    height: auto;
+    
+    .container {
+       margin-top: 50px;
+        display: block;
+    }
+}
+
+.register-text {
+    padding-left: 25%;
+    
+    h2 {
+        color: map-get($colors, yellow);
+        font-size: 42px;
+    }
+    
+    h4 {
+        font-size: 30px;
+        font-weight: 300;
+        margin-top: -40px;
+    }
+    
+    p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 23px;
+        color: map-get($colors, gray);
+    }
+}
+
+.form {
+    padding: 100px 80px;
+}
+
+input {
+    background-color: map-get($colors, darkblue);
+    color: map-get($colors, white);
+    border: none;
+    font-family: $font-family;
+    width: 45%;
+    padding: 10px 10px;
+    margin: 7px 10px;
+    
+    &::placeholder {
+        color: map-get($colors, white);
+        font-weight: 300;
+        font-size: 12px;
+    }
+    
+    &[type=submit] {
+        background-color: map-get($colors, yellow);
+        width: 18%;
+        color: map-get($colors, black);
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 11px;
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.error-message {
+    background-color: map-get($colors, darkblue);
+    width: 45%;
+    color: map-get($colors, yellow);
+    padding: 10px 10px;
+    font-family: $font-family;
+    font-size: 13px;
+    margin: 17px 10px;
+    display: none;
+}
+
+section:before, section:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+footer {
+    background-color: map-get($colors, yellow);
+    width: 100%;
+    color: map-get($colors, black);
+    text-align: center;
+    
+    p {
+        margin: 0;
+        font-size: 11px;
+        font-weight: 600;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    
+}
+
+.register-icons {
+    color: map-get($colors, yellow);
+    font-size: 28px;
+    position: relative;
+    margin: 25px 0 30px 10px;
+    
+    .fa-arrow-up {
+        position: absolute;
+    }
+    
+    .fa-arrow-down {
+        position: absolute;
+        margin-top: 20px;
+        margin-left: -13px;
+        
+    }
+    
+    p {
+        display: inline-block;
+        font-size: 78px;
+        transform: rotate(25deg);
+        font-weight: 300;
+        margin: 0;
+        margin-left: 16px;
+        margin-top: 10px;
+        color: map-get($colors, yellow);
+       
+        
+        .slash {
+            position: absolute;
+            top: 150px;
+            margin: 0;
+        }
+    }
+}
+
+
+//Animations
+
+@keyframes btnhover {
+    100% {background-color: map-get($colors, lightyellow);}
+}
+
+@keyframes btn2hover {
+    100% {background-color: map-get($colors, yellow);}
+}
+
+@keyframes btnborder {
+    100% {border-radius: 0;}
+}
+
+@keyframes arrow {
+    50%  {bottom: -5px;},
+    100% {bottom: 0;}
+}
+
+
+
+//Media queries
+
+@media (min-width: $breakpoint-big) {
+    .responsive-menu {
+        ul {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-middle) {
+    .hamburger {
+        display: block;
+    }
+    
+    .menu {
+        display: none;
+    }
+    
+    input {
+        width: 100%;
+        
+        &[type=submit] {
+            width: 40%;
+        }
+    }
+    
+    .main-header {
+    
+        h1 {
+            line-height: 52px;
+        }
+        
+        h3 {
+            line-height: 46px;
+        }
+    }
+    
+    .register-text {
+        h2 {
+            font-size: 36px;
+        }
+        
+        h4 {
+           font-size: 22px; 
+            line-height: 38px;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-small) {
+    .register-text {
+        padding: 0 40px;
+    }
+    
+    .form {
+        padding: 0 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (min-width: 585px) and (max-width: 629px) {
+    .form {
+        width: 500px;
+    }
+}
